@@ -5,7 +5,7 @@
 			text-align: center;
 			padding: 0;
 		}
-		height: 44px;
+		height: 35px;
 	}
 	.playground {
 		h1 {
@@ -27,6 +27,7 @@
 			border-top: $background-color-dark solid 1px;
 			background: $background-color;
 			@include box-shadow(rgba(0,0,0,0.55) 0px -2px 1px);
+			z-index: 80;
 			.btn {
 				display: block;
 				width: 90%;
@@ -92,10 +93,10 @@
 		margin: 20px 10px 10px 10px;		
 	}
 	.first-background-image {
-		background-position: 0 -435px !important;
+		background-position: 0 -446px !important;
 	}		
 	.second-background-image {
-		background-position: 0 -223px !important;
+		background-position: 0 -229px !important;
 	}
 }
 @media (min-width: 500px) and (max-width: 800px) {
@@ -128,21 +129,17 @@
 		background-position: 0 -229px !important;
 	}
 }
-@media (max-width: 500px) {
-	header {
-		height:35px;
-		.logo {
-			height: 35px;
-
-			h1 {
-				height: 30px;
-				margin: 5px 0;
-			}
-		}
-	}
+@media (min-width: 10px) and (max-width: 600px) {
 	.box, .main-content, .card-area {
 		padding: 10px;
 		margin-bottom: 10px;
+	}
+	.action.row-fluid {
+		padding: 2%;		
+		.offset4:first-child  {
+			margin-left: 0 !important;
+			width: 96% !important;
+		}
 	}
 	.categories-area {
 		ul {
@@ -160,7 +157,20 @@
 	}
 	.card-area {
 		.card {
-			left: 0;			
+			left: 0;
+		}
+		.span3 {
+			width: 23.40426% * 2 !important;
+			&:nth-child(1), &:nth-child(2) {
+				margin-bottom: 10px;
+			}	
+			&:nth-child(3), &:nth-child(4) {
+				margin-bottom: 10px;
+			}						
+			&:nth-child(3) {
+				clear:both !important;
+				margin-left: 0;
+			}						
 		}
 	}
 	body {
@@ -178,7 +188,7 @@
 	.first-background-image,
 	.second-background-image {
 		max-width: 120px;
-		max-height: 136px;
+		max-height: 194px;
 		min-height: 100px !important;
 		//background-position: top center !important;
 		background-size: cover !important;
@@ -187,7 +197,7 @@
 		margin: 20px 10px 10px 10px;		
 	}
 	.first-background-image {
-		background-position: 0 -445px !important;
+		background-position: 0 -448px !important;
 	}		
 	.second-background-image {
 		background-position: 0 -229px !important;
