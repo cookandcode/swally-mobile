@@ -1,0 +1,128 @@
+.tag {
+	.is-disabled {
+		background: $secondary-color;
+		@extend .no-shadow;	
+	}
+}
+.categories-area {
+    li.active {
+        color: $text-color;
+        opacity: 0.4;
+        text-decoration: line-through;
+    }
+}
+
+// État des cartes: is-revealed (retournée), is-not-revealed (non retournée)
+.card {
+    @include transition(all 0.5s linear);
+    @include transform-style(preserve-3d);
+    @include transform-origin(center top);
+    @include backface-visibility( hidden );
+
+	&.is-not-revealed {
+		@include card-sprite(front);
+		.category, .smiley {
+			display: none;
+		}
+	}
+	&.is-revealed {
+		.category, .smiley {
+			position: relative;
+			z-index: 100;		
+		}
+		&:hover {
+			cursor: pointer;
+		}
+		.category {
+			margin: 40px 27px 10px 27px;
+			@extend .h5;
+			color: $primary-color;
+		}
+		.smiley {
+			color: rgba($primary-color, 0.6);
+			font-weight: bold; 
+			@include rotate(90deg);
+		}
+		.first-background-color, 
+		.second-background-color,
+		.first-background-image,
+		.second-background-image {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.first-background-color, 
+		.second-background-color {
+			background-color: rgba($primary-color, 0.3);
+		}
+		.first-background-image {
+			@include card-sprite(mask-lvl-1);
+		} 
+		.second-background-image {
+			@include card-sprite(mask-lvl-2);
+		} 
+		.first-background-image,
+		.second-background-image {
+			background-repeat: no-repeat;
+			background-position: top middle
+		}
+		&.default {
+			.first-background-color, 
+			.second-background-color {
+				background-color: rgba($text-color, 0.3);
+			}		
+			.category {
+				color: $text-color;
+			}
+			.smiley {
+				color: rgba($text-color, 0.6);
+			}
+		}
+	}
+    &.back {
+        position: absolute;
+        top: 0;
+        left: 18px;
+        @include transform(rotateY(180deg));
+    }
+}
+
+.card-area .span3.show {
+    .front {
+        @include transform(rotateY(180deg));
+    }
+    .back {
+        @include transform(rotateY(0deg));
+    }
+}
+
+.playground {	
+	&.is-card-1 {
+		.pledge-area {
+			&:before, &:after {
+				left: 12.5%; 			
+			}
+		}
+	}
+	&.is-card-2 {
+		.pledge-area {
+			&:before, &:after {
+				left: 38%; 			
+			}			
+		}
+	}
+	&.is-card-3 {
+		.pledge-area {
+			&:before, &:after {
+				left: 63.5%;
+			}			
+		}
+	}
+	&.is-card-4 {
+		.pledge-area {
+			&:before, &:after {
+				left: 89.5%;
+			}			
+		}
+	}
+}
