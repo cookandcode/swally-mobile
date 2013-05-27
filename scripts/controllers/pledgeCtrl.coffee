@@ -1,4 +1,4 @@
-window.ourApp.controller('PledgesCtrl', ['$scope','Pleges','$q', ($scope, Pledges, $q)->
+window.ourApp.controller('PledgesCtrl', ['$scope','Pleges', 'sharedServices','$q', ($scope, Pledges, sharedServices, $q)->
 
   one_pledge = {
         __v:0
@@ -49,6 +49,11 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pleges','$q', ($scope, Pledge
 
   $scope.nb_play = 0
 
+
+  #MYCODE
+  $scope.current_mini_game = []
+  $scope.show_mini_game = false
+
   $scope.getPledge = ()->
     generateRandomPledges(nb_card)
 
@@ -75,7 +80,19 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pleges','$q', ($scope, Pledge
       if (shot_played >= nb_card)
         $scope.show_new_turn = true
         shot_played = 0
+
+      #MYCODE
+      if $scope.current_pledges[index_card].data.category.title == 'Mini-jeu'
+        sharedServices.showMiniGame({
+            url: '/views/_game.html'
+        })
     
+
+  $scope.$on('show-mini-game', ()->
+    $scope.show_mini_game = sharedServices.show_mini_game
+    $scope.current_mini_game = sharedServices.current_mini_game
+  )
+
 
   generateRandomPledges = (number)->
     all_pledges = $scope.pledges
@@ -107,7 +124,6 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pleges','$q', ($scope, Pledge
         })
 
     # // Set in scope.
-    console.log pledges
     $scope.current_pledges = pledges;
     $scope.current_categories = categories;
 
