@@ -1,5 +1,5 @@
 //Menu Bar
-header {
+.main-bar {
 	width: 100%;
 	height: 35px;
 	position: relative;
@@ -87,10 +87,7 @@ header {
 	}
 	.btn {
 		margin-bottom: 15px;
-		margin-top: 20px;				
-		font-size: 20px;
-		font-weight: normal;
-		padding: 10px inherit		
+		margin-top: 20px;					
 	}
 	.btn i {
 		font-weight: normal;		
@@ -188,5 +185,68 @@ header {
 		&:last-child {
 			margin-right: 0;
 		}
+	}
+}
+.mini-game {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	z-index: 100;
+	margin: -35px 0 0 0; 
+	padding: $main-gutter;
+	box-sizing:border-box;
+	background: rgba($background-color-light-2,0.95);
+	.container {
+		margin: 0 auto;
+	}
+	.introduction-wrapper {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	.introduction {
+		text-align: center; 
+		text-align: justify; 
+		padding-top: $main-gutter;
+		h1, footer {
+			text-align: center;
+		}
+		header {
+			margin:0 auto $main-gutter * 1.5 auto;
+		}
+		.content {
+			margin: 0 0 $main-gutter * 1.25 0;
+		}
+		footer {
+			margin-bottom: $main-gutter;
+		}
+	}		
+	.sreen-game {
+		.instruction {
+			text-align: center;
+			position: absolute;
+			bottom: -20px;
+			left: 49%;
+		}	
+		.instruction, .timer, .gauge { // transition pour l'apparition de l'interface de jeu
+			@include transition-property(all);
+			@include transition-duration(400ms);
+			@include transition-timing-function(ease-in);
+		}	
+		&.interface-is-displayed {
+			.gauge {
+				left: $main-gutter;
+				opacity: 1;
+			}
+			.timer {
+				right: $main-gutter;
+				opacity: 1;
+			}
+			.instruction {
+				bottom: $main-gutter;
+				opacity: 1;				
+			}
+		}		
 	}
 }
