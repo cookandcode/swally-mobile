@@ -120,7 +120,7 @@
         category: {
           __v: 0,
           _id: "516092b6b09bb90200000012",
-          title: "Tout le monde boit"
+          title: "Mini-jeu"
         }
       };
       two_pledge = {
@@ -131,7 +131,7 @@
         category: {
           __v: 0,
           _id: "5160915cb09bb90200000004",
-          title: "Fais boire"
+          title: "Mini-jeu"
         }
       };
       pledges_static = [];

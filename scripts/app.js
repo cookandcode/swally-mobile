@@ -9,7 +9,7 @@
         templateUrl: 'views/_card.html',
         controller: 'PledgesCtrl'
       }).when('/game', {
-        templateUrl: 'views/_game.html',
+        templateUrl: 'views/_game_backup.html',
         controller: 'GamesCtrl'
       }).otherwise({
         redirectTo: '/'

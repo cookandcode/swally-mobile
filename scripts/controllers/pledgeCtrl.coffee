@@ -8,7 +8,7 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pleges','$q', ($scope, Pledge
         category:{
             __v: 0
             _id: "516092b6b09bb90200000012"
-            title: "Tout le monde boit"
+            title: "Mini-jeu"
         }
   }
 
@@ -20,7 +20,7 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pleges','$q', ($scope, Pledge
     category:{
         __v: 0
         _id: "5160915cb09bb90200000004"
-        title: "Fais boire"
+        title: "Mini-jeu"
     }
   }
 

@@ -1,23 +1,10 @@
-describe('Test Pledge controller', ()->
-	beforeEach('ourApp')
+describe('Launch the taptap Game', ()->
+	it('should lauch a game',()->
+		browser().navigateTo('/')
+		sleep(5)
+		element('.card-area>form>button').click();
+	)
+	it('should show the layout taptap game', ()->
 
-	ctrl
-	scope
-
-	beforeEach(inject(($controller, $rootScope)->
-		scope = $rootScope.$new()
-
-		ctrl = $controller('PledgesCtrl',{
-			$scope: scope
-		})
-	))
-
-	# it('test all Pledge', ()->
-	# 	scope.pledges = []
-
-	# 	scope.pledges.push({
-	# 		titre:'test'
-	# 	})
-
-	# )
+	)
 )

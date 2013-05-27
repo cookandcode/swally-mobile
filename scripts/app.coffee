@@ -8,7 +8,7 @@ window.ourApp.config(['$routeProvider', ($routeProvider)->
         controller: 'PledgesCtrl'
       })
       .when('/game', {
-        templateUrl: 'views/_game.html',
+        templateUrl: 'views/_game_backup.html',
         controller: 'GamesCtrl'
       })
       .otherwise({
