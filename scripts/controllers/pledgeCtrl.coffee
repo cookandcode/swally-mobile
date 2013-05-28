@@ -33,7 +33,8 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pleges', 'sharedServices','$q
   nb_card     = 2
 
   # $scope.pledges = Pledges.getAll(()->
-  #   $scope.pledges = $scope.pledges.data;
+  #   # $scope.pledges = $scope.pledges.data;
+  #   # console.log $scope.pledges
   # )
 
   $scope.pledges = pledges_static #Pledges.query()
@@ -53,6 +54,11 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pleges', 'sharedServices','$q
   #MYCODE
   $scope.current_mini_game = []
   $scope.show_mini_game = false
+
+  $scope.$on('show-mini-game', ()->
+    $scope.show_mini_game = sharedServices.show_mini_game
+    $scope.current_mini_game = sharedServices.current_mini_game
+  )
 
   $scope.getPledge = ()->
     generateRandomPledges(nb_card)
@@ -88,10 +94,7 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pleges', 'sharedServices','$q
         })
     
 
-  $scope.$on('show-mini-game', ()->
-    $scope.show_mini_game = sharedServices.show_mini_game
-    $scope.current_mini_game = sharedServices.current_mini_game
-  )
+  
 
 
   generateRandomPledges = (number)->

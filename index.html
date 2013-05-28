@@ -10,7 +10,7 @@
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
         <link rel="stylesheet" href="http://swally.herokuapp.com/stylesheets/app.css"/>
-        
+
         <style type="text/css">
             div.effect-click{
                 height: 6px;
@@ -29,7 +29,6 @@
         </style>
     </head>
     <body ng-app="swallyApp" id="page">
-
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
@@ -52,6 +51,7 @@
             </table>    
         </header>
 
+
         <div ng-controller="GamesCtrl" ng-include src="current_mini_game.url" ng-show="show_mini_game" ></div>        
 
         <table>
@@ -66,18 +66,16 @@
 
 
         <!-- build:js scripts/scripts.js -->
-    	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
         <script type="text/javascript" src="scripts/vendor/angular.min.js"></script>
-    	<script type="text/javascript" src="scripts/vendor/angular-resource.min.js"></script>
+        <script type="text/javascript" src="scripts/vendor/angular-resource.min.js"></script>
     	<script type="text/javascript" src="scripts/app.js"></script>
     	<script type="text/javascript" src="scripts/services/services.js"></script>
         <script type="text/javascript" src="scripts/directives/directives.js"></script>
     	<script type="text/javascript" src="scripts/controllers/controllers.js"></script>
         <!-- endbuild -->
 
-                <!-- PARTIAL FOR Access-Control-Allow-Origin -->
-        <script type="text/ng-template" src="./views/_card.html"></script>
-        <script type="text/ng-template" src="./views/_game.html"></script>
+        
         
     </body>
 </html>

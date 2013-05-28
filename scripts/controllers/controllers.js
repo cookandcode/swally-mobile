@@ -167,6 +167,10 @@
       $scope.nb_play = 0;
       $scope.current_mini_game = [];
       $scope.show_mini_game = false;
+      $scope.$on('show-mini-game', function() {
+        $scope.show_mini_game = sharedServices.show_mini_game;
+        return $scope.current_mini_game = sharedServices.current_mini_game;
+      });
       $scope.getPledge = function() {
         generateRandomPledges(nb_card);
         played_card = [];
@@ -198,10 +202,6 @@
           }
         }
       };
-      $scope.$on('show-mini-game', function() {
-        $scope.show_mini_game = sharedServices.show_mini_game;
-        return $scope.current_mini_game = sharedServices.current_mini_game;
-      });
       return generateRandomPledges = function(number) {
         var all_pledges, categories, i, index, pledge, pledges, pledges_length, _i;
         all_pledges = $scope.pledges;

@@ -3,13 +3,27 @@
 
   window.ourApp.factory('Categories', [
     '$resource', function($resource) {
-      return $resource('http://swally.herokuapp.com/category');
+      return $resource('http://swally.herokuapp.com/categories/:categoryId.json', {
+        categoryId: '@id',
+        callback: "JSON_CALLBACK"
+      }, {
+        getById: {
+          method: 'JSONP',
+          isArray: true
+        }
+      });
     }
   ]);
 
   window.ourApp.factory('Pleges', [
     '$resource', function($resource) {
-      return $resource('http://swally.herokuapp.com/pledges');
+      return $resource('http://swally.herokuapp.com/pledges.json', {
+        callback: "JSON_CALLBACK"
+      }, {
+        getAll: {
+          method: 'JSONP'
+        }
+      });
     }
   ]);
 
