@@ -70,6 +70,9 @@
 		padding: 0; // override la marge interne du module .box
 	}
 }
+.table-main-content {
+	position: relative;
+}
 
 // Zone de jeu
 .playground {	
@@ -194,7 +197,7 @@
 	top:0;
 	left: 0;
 	z-index: 100;
-	margin: -35px 0 0 0; 
+	margin: 0 0 0 0; 
 	padding: $main-gutter;
 	box-sizing:border-box;
 	background: rgba($background-color-light-2,0.95);

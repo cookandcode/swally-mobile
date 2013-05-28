@@ -70,11 +70,10 @@ $phone-gutter: 10px;
 $break-phone: "only screen and (max-width : 600px)";
 
 @import "base";
-@import "theme";
 @import "tools";
 @import "module";
 @import "layout";
-@import "game/animation";
+@import "game/game";
 @import "game/tap-tap";
 @import "state";
 @import "responsive";
