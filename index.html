@@ -9,24 +9,8 @@
         <title></title>
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="http://swally.herokuapp.com/stylesheets/app.css"/>
 
-        <style type="text/css">
-            div.effect-click{
-                height: 6px;
-                width: :6px;
-                background: blue;
-                border-radius: 20px;
-                position: absolute;
-            }
-
-            .mini-game *{
-                -moz-user-select: -moz-none;
-                -webkit-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
-        </style>
+        <link rel="stylesheet" href="assets/stylesheets/app.css"/>
     </head>
     <body ng-app="swallyApp" id="page">
         <!--[if lt IE 7]>
@@ -51,10 +35,14 @@
             </table>    
         </header>
 
+<<<<<<< HEAD
 
         <div ng-controller="GamesCtrl" ng-include src="current_mini_game.url" ng-show="show_mini_game" ></div>        
+=======
+        <div ng-controller="GamesCtrl" ng-include src="current_mini_game.url" ng-show="show_mini_game" class="mini-game" ></div>        
+>>>>>>> 1dbcb93a5f9d6567de538c781989071c5e7d3550
 
-        <table>
+        <table class="table-main-content">
             <tbody>
                 <tr>
                     <td>
