@@ -1,6 +1,5 @@
 window.ourApp.controller('TapTapCtrl', ['$scope','Pleges', 'sharedServices' ,'$q', ($scope, Pledges, sharedServices, $q)->
-
-  $scope.init = true
+  
   $scope.nb_player = 2
   $scope.actual_player = 1
 
@@ -18,7 +17,6 @@ window.ourApp.controller('TapTapCtrl', ['$scope','Pleges', 'sharedServices' ,'$q
 
   # FUNCTION WHICH INIT THE VAR FOR THE BEGINNING
   $scope.initVar = ()->
-    $scope.init = true
     $scope.nb_player = 4
     $scope.actual_player = 1
 

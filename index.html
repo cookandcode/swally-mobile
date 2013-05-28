@@ -10,7 +10,7 @@
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
         <link rel="stylesheet" href="http://swally.herokuapp.com/stylesheets/app.css"/>
-
+        
         <style type="text/css">
             div.effect-click{
                 height: 6px;
@@ -18,6 +18,13 @@
                 background: blue;
                 border-radius: 20px;
                 position: absolute;
+            }
+
+            .mini-game *{
+                -moz-user-select: -moz-none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
             }
         </style>
     </head>
@@ -68,8 +75,9 @@
     	<script type="text/javascript" src="scripts/controllers/controllers.js"></script>
         <!-- endbuild -->
 
-        <!-- PARTIAL FOR Access-Control-Allow-Origin -->
+                <!-- PARTIAL FOR Access-Control-Allow-Origin -->
         <script type="text/ng-template" src="./views/_card.html"></script>
         <script type="text/ng-template" src="./views/_game.html"></script>
+        
     </body>
 </html>

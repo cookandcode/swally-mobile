@@ -15,7 +15,6 @@
   window.ourApp.controller('TapTapCtrl', [
     '$scope', 'Pleges', 'sharedServices', '$q', function($scope, Pledges, sharedServices, $q) {
       var i, _i, _ref;
-      $scope.init = true;
       $scope.nb_player = 2;
       $scope.actual_player = 1;
       $scope.win_player = false;
@@ -29,7 +28,6 @@
       }
       $scope.initVar = function() {
         var _j, _ref1, _results;
-        $scope.init = true;
         $scope.nb_player = 4;
         $scope.actual_player = 1;
         $scope.score = {};
@@ -127,7 +125,7 @@
   ]);
 
   window.ourApp.controller('PledgesCtrl', [
-    '$scope', 'Pleges', 'sharedServices', '$q', function($scope, Pledges, sharedServices, $q) {
+    '$scope', 'Pleges', 'sharedServices', '$q', '$http', function($scope, Pledges, sharedServices, $q, $http) {
       var generateRandomPledges, nb_card, one_pledge, played_card, pledges_static, shot_played, two_pledge;
       one_pledge = {
         __v: 0,
@@ -195,7 +193,7 @@
           }
           if ($scope.current_pledges[index_card].data.category.title === 'Mini-jeu') {
             return sharedServices.showMiniGame({
-              url: '/views/_game.html'
+              url: './views/_game.html'
             });
           }
         }

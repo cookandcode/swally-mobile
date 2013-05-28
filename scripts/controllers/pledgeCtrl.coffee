@@ -1,4 +1,4 @@
-window.ourApp.controller('PledgesCtrl', ['$scope','Pleges', 'sharedServices','$q', ($scope, Pledges, sharedServices, $q)->
+window.ourApp.controller('PledgesCtrl', ['$scope','Pleges', 'sharedServices','$q','$http', ($scope, Pledges, sharedServices, $q, $http)->
 
   one_pledge = {
         __v:0
@@ -84,7 +84,7 @@ window.ourApp.controller('PledgesCtrl', ['$scope','Pleges', 'sharedServices','$q
       #MYCODE
       if $scope.current_pledges[index_card].data.category.title == 'Mini-jeu'
         sharedServices.showMiniGame({
-            url: '/views/_game.html'
+            url: './views/_game.html'
         })
     
 
