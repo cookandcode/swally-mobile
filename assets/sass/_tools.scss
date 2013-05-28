@@ -40,3 +40,9 @@
 .block {
 	display: block;
 }
+.is-valid, .is-validated {
+	color: $validated-color;
+}
+.is-green {
+	color: $green;
+}
