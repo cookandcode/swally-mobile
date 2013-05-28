@@ -8,9 +8,6 @@
       return $routeProvider.when('/', {
         templateUrl: 'views/_card.html',
         controller: 'PledgesCtrl'
-      }).when('/game', {
-        templateUrl: 'views/_game_backup.html',
-        controller: 'GamesCtrl'
       }).otherwise({
         redirectTo: '/'
       });
