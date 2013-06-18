@@ -1,43 +1,43 @@
 window.ourApp.controller('PledgesCtrl', ['$scope','Pleges', 'sharedServices','$q','$http', ($scope, Pledges, sharedServices, $q, $http)->
 
-  one_pledge = {
-        __v:0
-        _id: "516094ddb09bb9020000002d"
-        description: "Wééééé"
-        title: "Les filles boivent"
-        category:{
-            __v: 0
-            _id: "516092b6b09bb90200000012"
-            title: "Mini-jeu"
-        }
-  }
+  # one_pledge = {
+  #       __v:0
+  #       _id: "516094ddb09bb9020000002d"
+  #       description: "Wééééé"
+  #       title: "Les filles boivent"
+  #       category:{
+  #           __v: 0
+  #           _id: "516092b6b09bb90200000012"
+  #           title: "Mini-jeu"
+  #       }
+  # }
 
-  two_pledge = {
-    __v:0
-    _id: "51609396b09bb9020000001f"
-    description: "Niiiiice"
-    title: "Distribue 3 gorgées"
-    category:{
-        __v: 0
-        _id: "5160915cb09bb90200000004"
-        title: "Mini-jeu"
-    }
-  }
+  # two_pledge = {
+  #   __v:0
+  #   _id: "51609396b09bb9020000001f"
+  #   description: "Niiiiice"
+  #   title: "Distribue 3 gorgées"
+  #   category:{
+  #       __v: 0
+  #       _id: "5160915cb09bb90200000004"
+  #       title: "Mini-jeu"
+  #   }
+  # }
 
-  pledges_static = []
-  pledges_static.push(one_pledge)
-  pledges_static.push(two_pledge)
+  # pledges_static = []
+  # pledges_static.push(one_pledge)
+  # pledges_static.push(two_pledge)
   
   shot_played = 0
   played_card = []
-  nb_card     = 2
+  nb_card     = 4
 
-  # $scope.pledges = Pledges.getAll(()->
-  #   # $scope.pledges = $scope.pledges.data;
-  #   # console.log $scope.pledges
-  # )
+  $scope.pledges = Pledges.getAll(()->
+    $scope.pledges = $scope.pledges.data;
+    console.log $scope.pledges
+  )
 
-  $scope.pledges = pledges_static #Pledges.query()
+  $scope.pledges =  Pledges.query() #pledges_static
 
 
   $scope.current_pledges = []
